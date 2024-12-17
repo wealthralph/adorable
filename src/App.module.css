@@ -1,0 +1,46 @@
+.hero_wrapper {
+  height: 75vh;
+  width: 100%;
+  position: relative;
+}
+
+.hero_wrapper:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.918) 0%, transparent 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.507), transparent);
+  pointer-events: none; /* Ensure the pseudo-element doesn't block interactions */
+}
+
+.hero_title_cont {
+  position: relative; 
+  isolation: isolate; 
+  z-index: 1; 
+}
+
+
+.mission_card {
+    aspect-ratio: 400/400;
+    border-radius: var(--mantine-radius-lg);
+    position: relative;
+    border: thin solid var(--mantine-color-default-border);
+}
+
+.mission_card_content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: var(--mantine-spacing-md);
+}
+
+.mission_card_content_text {
+      display: -webkit-box;          
+    -webkit-box-orient: vertical; 
+    overflow: hidden;            
+    text-overflow: ellipsis;      
+    -webkit-line-clamp: 2;       
+    max-height: calc(1.2em * 3);  
+    line-height: 1.2em;          
+    margin: 0;   
+}
