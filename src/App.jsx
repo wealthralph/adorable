@@ -12,7 +12,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { img1 } from "./assets";
+import { img1, img2 } from "./assets";
 import Footer from "./components/footer/Footer";
 
 const HeroSection = () => {
@@ -77,22 +77,21 @@ const MissionSection = () => {
           support.
         </Text>
       </Stack>
-      <SimpleGrid cols={3} my={50}>
-        {
-        data.map(item => {
-            return (
-                <Box   key={item.id} className={styles.mission_card}>
-                    <BackgroundImage>
+      <SimpleGrid cols={{ base: 1, xs: 1, sm: 2, md: 3, lg: 3 }} my={50}>
+        {data.map((item) => {
+          return (
+            <Box key={item.id} className={styles.mission_card}>
+              <Image h={"100%"} src={img2} />
 
-                    </BackgroundImage>
-                    <Box className={styles.mission_card_content}>
-                        <Title  order={3}>{item.title}</Title>
-                        <Text className={styles.mission_card_content_text} >{item.desc}</Text>
-                    </Box>
-                </Box>
-            )
-        })
-        }
+              <Box className={styles.mission_card_content}>
+                <Title c={'white'} order={3}>{item.title}</Title>
+                <Text c={'white'} className={styles.mission_card_content_text}>
+                  {item.desc}
+                </Text>
+              </Box>
+            </Box>
+          );
+        })}
       </SimpleGrid>
     </Container>
   );
