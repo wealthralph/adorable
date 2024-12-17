@@ -12,7 +12,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { img1, img2 } from "./assets";
+import { director, img1, img2 } from "./assets";
 import Footer from "./components/footer/Footer";
 
 const HeroSection = () => {
@@ -37,6 +37,49 @@ const HeroSection = () => {
         </Container>
       </BackgroundImage>
     </section>
+  );
+};
+
+const FounderSection = () => {
+  return (
+    <Container size={"xl"} my={100}>
+      <SimpleGrid spacing={100} cols={{ base: 1, xs: 1, sm: 2, md: 2 }}>
+        <Box pos={"relative"}>
+          <Box className={styles.founder_image_card}>
+            <Image src={director} />
+          </Box>
+          <Box className={styles.founder_comment_box}></Box>
+        </Box>
+        <Stack h={"100%"} justify="center">
+          <Stack gap={"xl"}>
+            <Title order={3} fw={"lighter"}>
+              Driven By
+              <Text c={"red"} fw={"bold"} inherit span>
+                {" "}
+                Passion
+              </Text>{" "}
+            </Title>
+            <Title>Built on Passion</Title>
+            <Text>
+              Adorable Christmas Charity Foundation was initiated in 2014 by
+              Dame Adaora Umeorji, the current Group Managing Director (GMD) of
+              Zenith Bank Plc. Motivated by her passion for uplifting the less
+              privileged in society, Dame Adaora established the foundation with
+              a core group known as Team 20. This group embraced her vision of
+              caring for less privileged children, orphans, widows, and the
+              downtrodden.
+            </Text>
+            <Text>
+              Since its inception, the foundation has remained steadfast in its
+              mission, carrying out various impactful interventions,
+              particularly in Abuja and Anambra states. Over the years, the
+              foundation has grown to become a beacon of hope, spreading care,
+              joy, and happiness among underserved communities.
+            </Text>
+          </Stack>
+        </Stack>
+      </SimpleGrid>
+    </Container>
   );
 };
 
@@ -84,8 +127,10 @@ const MissionSection = () => {
               <Image h={"100%"} src={img2} />
 
               <Box className={styles.mission_card_content}>
-                <Title c={'white'} order={3}>{item.title}</Title>
-                <Text c={'white'} className={styles.mission_card_content_text}>
+                <Title c={"white"} order={3}>
+                  {item.title}
+                </Title>
+                <Text c={"white"} className={styles.mission_card_content_text}>
                   {item.desc}
                 </Text>
               </Box>
@@ -102,6 +147,7 @@ const App = () => {
     <main>
       <HeaderMenu />
       <HeroSection />
+      <FounderSection />
       <MissionSection />
       <Footer />
     </main>
