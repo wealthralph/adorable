@@ -82,7 +82,7 @@ export function HeaderMenu() {
             {items}
           </Group> */}
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-        <Button>Donate Now</Button>
+        <Button color="red">Donate Now</Button>
         </div>
       </Container>
     </header>
