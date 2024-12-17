@@ -1,5 +1,5 @@
 import { IconChevronDown } from "@tabler/icons-react";
-import { Burger, Center, Container, Group, Menu } from "@mantine/core";
+import { Burger, Button, Center, Container, Group, Menu, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.css";
 
@@ -75,12 +75,14 @@ export function HeaderMenu() {
 
   return (
     <header className={classes.header}>
-      <Container size="md">
+      <Container size="lg">
         <div className={classes.inner}>
-          <Group gap={5} visibleFrom="sm">
+        <Text>Adorable Foundation</Text>
+          {/* <Group gap={5} visibleFrom="sm">
             {items}
-          </Group>
+          </Group> */}
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+        <Button>Donate Now</Button>
         </div>
       </Container>
     </header>
