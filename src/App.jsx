@@ -2,6 +2,7 @@ import { HeaderMenu } from "./components/header/Header";
 import styles from "./App.module.css";
 import { BackgroundImage, Box, Button, Container, Stack, Text, Title } from "@mantine/core";
 import { img1 } from "./assets";
+import Footer from "./components/footer/Footer";
 
 const HeroSection = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
     <main>
       <HeaderMenu />
       <HeroSection />
+      <Footer/>
     </main>
   );
 };
