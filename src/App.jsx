@@ -4,15 +4,16 @@ import {
   BackgroundImage,
   Box,
   Button,
-  Card,
   Container,
+  Group,
   Image,
+  Paper,
   SimpleGrid,
   Stack,
   Text,
   Title,
 } from "@mantine/core";
-import { director, img1, img2 } from "./assets";
+import { director, img1, img2, img3 } from "./assets";
 import Footer from "./components/footer/Footer";
 
 const HeroSection = () => {
@@ -20,9 +21,12 @@ const HeroSection = () => {
     <section className={styles.hero_wrapper}>
       <BackgroundImage h={"100%"} src={img1}>
         <Container size={"xl"} h={"100%"}>
-          <Stack w={"100%"} h={"100%"} justify="start" pt={70}>
+          <Stack w={"100%"} h={"100%"} justify="center" py={70}>
             <Stack maw={700} className={styles.hero_title_cont}>
-              <Title fz={60} c={"white"}>
+              <Title
+                fz={{ base: "h1", xs: "h1", sm: 45, md: 50, lg: 60 }}
+                c={"white"}
+              >
                 The Adorable Foundation Christmas Charity Foundation
               </Title>
               <Text size="xl" c={"white"}>
@@ -59,7 +63,7 @@ const FounderSection = () => {
                 Passion
               </Text>{" "}
             </Title>
-            <Title>Built on Passion</Title>
+            <Title fw={500}>Built on Passion</Title>
             <Text>
               Adorable Christmas Charity Foundation was initiated in 2014 by
               Dame Adaora Umeorji, the current Group Managing Director (GMD) of
@@ -142,15 +146,87 @@ const MissionSection = () => {
   );
 };
 
+const StatsSection = () => {
+  const stats = [
+    {
+      value: "5k",
+      label: (
+        <Text lh={1.4}>
+          Children <br /> Catered for
+        </Text>
+      ),
+    },
+    { value: "60", label: "Volunteers" },
+    { value: "250", label: "Projects" },
+  ];
+
+  return (
+    <Container size={"xl"} w={"100%"} style={{ zIndex: 4 }} mb={-50}>
+      <Paper shadow="md" h={150} py={"md"} px={'xl'} radius={'lg'} style={{ zIndex: 3 }}>
+        <Group justify="space-between" h={"100%"}>
+          {stats.map((i) => (
+            <Group key={i.value}>
+              <Title c={"red"} fz={45}>
+                {i.value}
+              </Title>
+              <Text>{i.label}</Text>
+            </Group>
+          ))}
+        </Group>
+      </Paper>
+    </Container>
+  );
+};
+
+
+const ImpactSection = () => {
+  return (
+    <Container fluid w={"100%"} p={0} mb={100}>
+      <SimpleGrid cols={{ base: 1, xs: 1, sm: 2, md: 2 }} spacing={0}>
+        <Image src={img3} className={styles.impact_img} />
+        <Box className={styles.impact_box}>
+          <Stack h={"100%"} justify="center" maw={700} mx={"auto"}>
+            <Title order={3} fw={"lighter"}>
+              Our{" "}
+              <Text c={"red"} fw={"bold"} inherit span>
+                Impact
+              </Text>{" "}
+            </Title>
+            <Title fw={500}>Becoming a beacon of hope</Title>
+            <Text>
+              Adorable Christmas Charity Foundation has successfully organized
+              medical outreaches that provided free healthcare services,
+              including prescription medications, essential drugs, and optical
+              glasses for individuals in need. These programs have positively
+              impacted thousands of lives, offering critical support to
+              underserved populations. Welfare Interventions:
+            </Text>
+            <Text>
+              The foundation has consistently supported orphans, widows, and
+              marginalized individuals by providing essential items, financial
+              assistance, and targeted interventions to meet immediate and
+              long-term welfare needs.
+            </Text>
+          </Stack>
+        </Box>
+      </SimpleGrid>
+    </Container>
+  );
+}
+
 const App = () => {
   return (
-    <main>
+    <>
       <HeaderMenu />
       <HeroSection />
       <FounderSection />
       <MissionSection />
+      <Stack w={'100%'} >
+      <StatsSection />
+      <ImpactSection/>
+      </Stack>
       <Footer />
-    </main>
+    </>
   );
 };
 

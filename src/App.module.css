@@ -1,7 +1,7 @@
 .hero_wrapper {
-  height: 75vh;
   width: 100%;
   position: relative;
+  height: 80dvh;
 }
 
 .hero_wrapper:after {
@@ -98,4 +98,19 @@
   border: thin solid var(--mantine-color-gray-5);
   border-bottom: none;
   background-color: rgba(48, 48, 48, 0.582);
+}
+
+
+.impact_img {
+  filter: contrast(1);
+  filter: grayscale(1);
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+}
+
+.impact_box {
+  height: 100%;
+  background-color: rgb(250, 244, 236);
+  padding: var(--mantine-spacing-sm);
 }
