@@ -1,6 +1,7 @@
 import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
-import { ActionIcon, Container, Group, Text } from '@mantine/core';
+import { ActionIcon, Container, Group, Image, Text } from '@mantine/core';
 import classes from './Footer.module.css';
+import { logo } from '../../assets';
 
 const data = [
   {
@@ -58,9 +59,10 @@ const data = [
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <Text size="xs" c="dimmed" className={classes.description}>
+          <Image src={logo} h={80}/>
+          {/* <Text size="xs" c="dimmed" className={classes.description}>
             Adorable Foundation Christmas Charity Foundation{" "}
-          </Text>
+          </Text> */}
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
